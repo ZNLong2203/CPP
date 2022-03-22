@@ -4,22 +4,17 @@ using namespace std;
 class Employee {
 	public:
 		string name;
-		long long bs;
-		int workday;
 		string pos;
+		long long bs;
+		long long workday;
 		long long spfund;
 };
 
 void input(Employee &nv) {
-	scanf("\n");
 	getline(cin,nv.name);
-	scanf("\n");
 	cin >> nv.bs;
-	scanf("\n");
 	cin >> nv.workday;
-	fflush(stdin);
-	scanf("\n");
-	getline(cin,nv.pos);	
+	cin >> nv.pos;	
 }
 
 void supfund(Employee &nv) {
@@ -47,9 +42,6 @@ int main() {
 		bonus=0;
 	}
 	supfund(nv);
-	cout << "NV01 " << nv.name << " " << MonthSalary << " "; 
-	if(bonus!=0) {
-		cout << bonus << " " ;
-	}
+	cout << "NV01 " << nv.name << " " << MonthSalary << " " << bonus << " "; 
 	cout << nv.spfund << " " << nv.spfund+MonthSalary+bonus; 
 }
